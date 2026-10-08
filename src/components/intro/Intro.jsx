@@ -1,12 +1,15 @@
 import React from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaReact, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiFlutter, SiGo, SiJavascript, SiLaravel } from 'react-icons/si'
 import {bannerImg} from "../../assets/index"
 
+const WORDS = ["Full Stack Developer", "Backend Developer", "Front End Developer", "Penetration Tester"];
+const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a));
+
 const Banner = () => {
   const [text] = useTypewriter({
-    words: ["Full Stack Developer", "Web Developer", "Mobile Apps Developer", "Penetration Tester"],
+    words: WORDS,
     loop: true,
     typeSpeed: 20,
     deleteSpeed: 10,
@@ -15,7 +18,7 @@ const Banner = () => {
   return (
     <section
       id="intro"
-      className="w-full pt-10 pb-20 px-10 flex flex-col gap-10 xl:gap-0 lg:flex-row items-center border-b font-titleFont border-b-green-800"
+      className="w-full pt-10 pb-20 px-10 flex flex-col gap-10 xl:gap-0 lg:flex-row items-center border-b font-titleFont border-b-blue-700"
     >
       {/* LEFT */}
       <div className="w-full lg:w-1/2 flex flex-col gap-20">
@@ -24,13 +27,19 @@ const Banner = () => {
           <h1 className="text-6xl font-bold text-white">
             Hi, I'm <span className="text-designColor capitalize">Musyaddad</span>
           </h1>
-          <h2 className="text-4xl font-bold text-white">
-            a <span>{text}</span>
-            <Cursor
-              cursorBlinking="false"
-              cursorStyle="|"
-              cursorColor="#4ECCA3"
-            />
+          <h2 className="grid text-2xl sm:text-4xl font-bold text-white">
+            <span className="invisible col-start-1 row-start-1" aria-hidden="true">
+              a {LONGEST}|
+            </span>
+
+            <span className="col-start-1 row-start-1">
+              a <span>{text}</span>
+              <Cursor
+                cursorBlinking={false}
+                cursorStyle="|"
+                cursorColor="#4ECCA3"
+              />
+            </span>
           </h2>
           <p className="text-base font-bodyFont leading-6 tracking-wide">
             I don't just write code to make things work.
@@ -41,18 +50,18 @@ const Banner = () => {
           </p>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
           <div>
             <h2 className="text-base uppercase font-titleFont mb-4">
               Find me in
             </h2>
             <div className="flex gap-4">
-              <span className="bannerIcon">
-                <FaLinkedinIn/> 
-              </span>
-              <span className="bannerIcon">
+              <a href="https://linkedin.com/in/naufalmusyaddad" target="_blank" rel="noopener noreferrer" className="bannerIcon">
+                <FaLinkedinIn/>  
+              </a>
+              <a href="https://instagram.com/naufal_musyaddad" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <FaInstagram/> 
-              </span>
+              </a>
             </div>
           </div>
 
@@ -61,18 +70,18 @@ const Banner = () => {
               BEST SKILL ON
             </h2>
             <div className="flex gap-4">
-              <span className="bannerIcon">
+              <a href="https://laravel.com/framework/docs/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiLaravel />
-              </span>
-              <span className="bannerIcon">
+              </a>
+              <a href="https://go.dev/doc/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiGo size="35px"/>
-              </span>
-              <span className="bannerIcon">
+              </a>
+              <a href="https://docs.flutter.dev/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiFlutter />
-              </span>
-              <span className="bannerIcon">
+              </a>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiJavascript />
-              </span>
+              </a>
             </div>
           </div>
 
@@ -80,7 +89,7 @@ const Banner = () => {
       </div>
 
       {/* RIGHT */}
-      <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+      <div className="hidden md:flex w-full lg:w-1/2 justify-center items-center relative">
         <img src={bannerImg} alt="bannerImg" />
       </div>
 

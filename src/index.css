@@ -5,15 +5,15 @@
   --font-bodyFont: "Poppins", sans-serif;
   --font-titleFont: "Montserrat", sans-serif;
 
-  --color-bodyColor: #043523;
+  --color-bodyColor: #062569;
   --color-lightText: #ffffff;
-  --color-designColor: #4ECCA3;
+  --color-designColor: #03e5f6;
 
   /* Gradient (class = bg-boxBg) */
   --background-image-boxBg: linear-gradient(145deg, #1e2024, #23272b);
 
   /* Box Shadow */
-  --shadow-shadowOne: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+  --shadow-shadowOne: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 @layer components {
@@ -40,5 +40,5 @@
 }
 
 .active {
-  color:#4ECCA3
+  color:#03e5f6
 }
