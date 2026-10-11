@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <nav className="w-full h-16 px-6 mx-auto flex justify-between items-center bg-bodyColor sticky top-0 z-50 border-b border-b-blue-500">
-        <div className="h-full py-2 flex items-center justify-end gap-3 cursor-pointer">
+        <div className="h-full py-2 flex items-center justify-end gap-3">
             <img 
               src={logo} 
               alt="logo" 
-              className="h-10 w-auto object-contain cursor-pointer" 
+              className="h-10 w-auto object-contain" 
             />
         </div>
 
@@ -42,7 +42,7 @@ const Navbar = () => {
                         to={link}
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-60}
                         duration={500}
                     >
                         {title}

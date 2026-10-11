@@ -3,7 +3,7 @@ import { HiArrowRight } from "react-icons/hi";
 
 const FeatureCard = ({title, des, icon}) => {
   return (
-    <div className="w-full px-6 xl:px-12 h-auto py-10 rounded-lg shadow-shadowOne flex items-start bg-linear-to-b from-[#0a3899] via-black to-black border border-white/10 hover:border-bodyColor bg-[length:100%_200%] bg-[position:_0%_0%] hover:bg-[position:_0%_35%] hover:shadow-[0_0_20px_rgba(6,37,105,0.4)] transition-all duration-500">
+    <div className="w-full px-6 xl:px-12 h-auto py-10 rounded-lg shadow-shadowOne flex items-start bg-linear-to-b from-[#0a3899] via-black to-black border border-white/10 hover:border-bodyColor bg-size-[100%_200%] bg-position-[0%_0%] hover:bg-position-[0%_35%] hover:shadow-[0_0_20px_rgba(6,37,105,0.4)] transition-all duration-500">
       <div className="h-auto w-full overflow-hidden">
         <div className="flex h-full flex-col gap-8 md:gap-10 translate-y-4 xl:translate-y-16 group-hover:translate-y-0 transition-transform duration-500">
 

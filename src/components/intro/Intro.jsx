@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiFlutter, SiGo, SiJavascript, SiLaravel } from 'react-icons/si'
 import {bannerImg} from "../../assets/index"
 
-const WORDS = ["Full Stack Developer", "Backend Developer", "Front End Developer", "Penetration Tester"];
+const WORDS = ["Full Stack Developer", "Backend Developer", "Front End Developer", "Software Tester"];
 const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a));
 
 const Banner = () => {
@@ -35,7 +35,7 @@ const Banner = () => {
             <span className="col-start-1 row-start-1">
               a <span>{text}</span>
               <Cursor
-                cursorBlinking={false}
+                cursorBlinking={true}
                 cursorStyle="|"
                 cursorColor="#4ECCA3"
               />
