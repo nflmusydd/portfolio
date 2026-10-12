@@ -25,12 +25,10 @@ import boomballoon4 from "./images/projects/boomballoon4.jpg";
 import binusLogo from "./images/resume/Logo-Binus-University.png";
 import backendBootcampCert from "./images/resume/backend-bootcamp.png";
 import sqlBasicCert from "./images/resume/sql-basic-certificate.png";
-import contactImg from "./images/contact/contactImg.png";
 
 export {
   logo,
   bannerImg,
-  contactImg,
   booking_microservices,
   pawtastic1,
   pawtastic2,

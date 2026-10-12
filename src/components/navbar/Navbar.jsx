@@ -6,6 +6,7 @@ import { navLinksdata } from '../../constans/index.jsx'
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [lang, setLang] = useState('ID');
+  const [showMenuMobile, setShowMenu] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +24,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full h-16 px-6 mx-auto flex justify-between items-center bg-bodyColor sticky top-0 z-50 border-b border-b-blue-500">
-        <div className="h-full py-2 flex items-center justify-end gap-3">
+        <div 
+          className="h-full py-2 flex items-center justify-start gap-3 cursor-pointer md:cursor-default"
+          onClick={() => {
+            if (window.innerWidth < 768) {
+              setShowMenu(true);
+            }
+          }}
+        >
             <img 
               src={logo} 
               alt="logo" 
@@ -87,6 +95,59 @@ const Navbar = () => {
                     English
                 </button>
             </div>
+        </div>
+
+        {/* ===================== SIDEBAR MOBILE ===================== */}
+        
+        <div 
+          className={`fixed inset-0 bg-black/80 z-40 transition-opacity duration-300 md:hidden ${showMenuMobile ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+          onClick={() => setShowMenu(false)}
+        ></div>
+
+        <div 
+          className={`fixed top-0 left-0 w-[75%] h-screen bg-bodyColor border-r border-r-gray-800 z-50 p-6 flex flex-col gap-8 transition-transform duration-300 ease-in-out md:hidden shadow-shadowOne ${
+            showMenuMobile ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          <div className="flex justify-between items-center border-b border-gray-700 pb-4">
+            <div className="flex items-center gap-3">
+                <img src={logo} alt="logo" className="h-8 w-auto object-contain" />
+                <span className="pl-2 text-xl font-bold font-titleFont text-white tracking-wide">
+                    Portfolio
+                </span>
+            </div>
+            
+            <button 
+              onClick={() => setShowMenu(false)}
+              className="text-gray-400 hover:text-designColor transition-colors duration-300 p-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Daftar Navigasi Mobile */}
+          <ul className="flex flex-col gap-6 font-titleFont text-lightText">
+            {navLinksdata.map(({_id, title, link}) => (
+              <li 
+                key={_id} 
+                className="text-base font-medium tracking-wide hover:text-designColor cursor-pointer transition-colors duration-300"
+              >
+                <Link
+                  activeClass="active"
+                  to={link}
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
+                  onClick={() => setShowMenu(false)} // tutup sidebar setelah link diklik
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
         
     </nav>
