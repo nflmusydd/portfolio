@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Navbar from './components/navbar/Navbar'
 import Intro from './components/intro/Intro'
-import Features from './components/features/features'
+import Features from './components/features/Features'
 import Projects from './components/projects/Projects'
 import Resume from './components/resume/Resume'
 import Contact from './components/contact/Contact'
