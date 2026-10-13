@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Title from '../layouts/Title'
 import Education from './Education'
 import Skills from './Skills'
@@ -6,12 +7,13 @@ import Experience from './Experience'
 import Certifications from './Certifications'
 
 const Resume = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("experience");
 
   return (
     <section id="resume" className="w-full py-20 px-10 border-b border-b-blue-700">
       <div className="flex justify-center items-center text-center">
-        <Title title="BACKGROUND & EXPERIENCE" des="My Resume" />
+        <Title title={t('resume.title')} des={t('resume.des')} />
       </div>
 
       <div>
@@ -24,7 +26,7 @@ const Resume = () => {
                 : "text-gray-400 bg-transparent border-transparent border-b-4"
             }`}
           >
-            Experience
+            {t('resume.tabs.experience')}
           </li>
           <li 
             onClick={() => setActiveTab("skills")}
@@ -34,7 +36,7 @@ const Resume = () => {
                 : "text-gray-400 bg-transparent border-transparent border-b-4"
             }`}
           >
-            Professional Skills
+            {t('resume.tabs.skills')}
           </li>
           <li 
             onClick={() => setActiveTab("education")}
@@ -44,7 +46,7 @@ const Resume = () => {
                 : "text-gray-400 bg-transparent border-transparent border-b-4"
             }`}
           >
-            Education
+            {t('resume.tabs.education')}
           </li>
           <li 
             onClick={() => setActiveTab("certifications")}
@@ -54,7 +56,7 @@ const Resume = () => {
                 : "text-gray-400 bg-transparent border-transparent border-b-4"
             }`}
           >
-            Certifications
+            {t('resume.tabs.certifications')}
           </li>
         </ul>
       </div>

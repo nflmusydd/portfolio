@@ -14,7 +14,7 @@ function App() {
     <div className="w-full h-auto bg-bodyColor text-lightText">
       <div className="max-w-screen-2xl mx-auto px-4">
         <Navbar/>
-        <Intro/>
+        <Intro />
         <Features/>
         <Projects/>
         <Resume/>

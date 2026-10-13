@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from "react-scroll"
+import { useTranslation } from 'react-i18next'
 import { logo } from "../../assets/index.jsx"
 import { navLinksdata } from '../../constans/index.jsx'
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [lang, setLang] = useState('ID');
   const [showMenuMobile, setShowMenu] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -22,6 +23,14 @@ const Navbar = () => {
     };
   }, []);
 
+  // force scroll so Intro is Active at start
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 4, behavior: 'instant' });
+    }, 150);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <nav className="w-full h-16 px-6 mx-auto flex justify-between items-center bg-bodyColor sticky top-0 z-50 border-b border-b-blue-500">
         <div 
@@ -35,12 +44,23 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="logo" 
-              className="h-10 w-auto object-contain" 
+              className="h-10 w-auto object-contain hidden md:block" 
             />
+
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                strokeWidth={1.5} 
+                stroke="currentColor" 
+                className="w-7 h-7 text-lightText hover:text-designColor transition-colors md:hidden"
+            >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
         </div>
 
         <ul className="items-center gap-8 font-titleFont text-lightText hidden md:flex">
-            {navLinksdata.map(({_id, title, link}) => (
+            {navLinksdata.map(({_id, titleKey, link}) => (
                 <li 
                     key={_id} 
                     className="text-base font-normal tracking-wide hover:text-designColor cursor-pointer transition-colors duration-300"
@@ -53,7 +73,7 @@ const Navbar = () => {
                         offset={-60}
                         duration={500}
                     >
-                        {title}
+                        {t(titleKey)}
                     </Link>
                 </li>
             ))}
@@ -68,7 +88,7 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A11.954 11.954 0 0 1 12 13.5c-2.998 0-5.74 1.1-7.843 2.918m15.686 0A8.959 8.959 0 0 1 12 21" />
                 </svg>
 
-                <span className="font-medium text-sm tracking-wide">{lang}</span>
+                <span className="font-medium text-sm tracking-wide">{i18n.language === 'id' ? 'ID' : 'EN'}</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -83,22 +103,21 @@ const Navbar = () => {
                 }`}
             >
                 <button 
-                    onClick={() => { setLang('ID'); setDropdownOpen(false); }}
-                    className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${lang === 'ID' ? 'text-designColor font-semibold' : 'text-lightText'}`}
+                    onClick={() => { i18n.changeLanguage('en'); setDropdownOpen(false); }}
+                    className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${(i18n.language === 'en') ? 'text-designColor font-semibold' : 'text-lightText'}`}
                 >
-                    Indonesia
+                    {t('navbar.english')}
                 </button>
                 <button 
-                    onClick={() => { setLang('EN'); setDropdownOpen(false); }}
-                    className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${lang === 'EN' ? 'text-designColor font-semibold' : 'text-lightText'}`}
+                    onClick={() => { i18n.changeLanguage('id'); setDropdownOpen(false); }}
+                    className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${(i18n.language === 'id') ? 'text-designColor font-semibold' : 'text-lightText'}`}
                 >
-                    English
+                    {t('navbar.indonesia')}
                 </button>
             </div>
         </div>
 
         {/* ===================== SIDEBAR MOBILE ===================== */}
-        
         <div 
           className={`fixed inset-0 bg-black/80 z-40 transition-opacity duration-300 md:hidden ${showMenuMobile ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
           onClick={() => setShowMenu(false)}
@@ -113,7 +132,7 @@ const Navbar = () => {
             <div className="flex items-center gap-3">
                 <img src={logo} alt="logo" className="h-8 w-auto object-contain" />
                 <span className="pl-2 text-xl font-bold font-titleFont text-white tracking-wide">
-                    Portfolio
+                    {t('navbar.portfolio')}
                 </span>
             </div>
             
@@ -129,7 +148,7 @@ const Navbar = () => {
 
           {/* Daftar Navigasi Mobile */}
           <ul className="flex flex-col gap-6 font-titleFont text-lightText">
-            {navLinksdata.map(({_id, title, link}) => (
+            {navLinksdata.map(({_id, titleKey, link}) => (
               <li 
                 key={_id} 
                 className="text-base font-medium tracking-wide hover:text-designColor cursor-pointer transition-colors duration-300"
@@ -143,7 +162,7 @@ const Navbar = () => {
                   duration={500}
                   onClick={() => setShowMenu(false)} // tutup sidebar setelah link diklik
                 >
-                  {title}
+                  {t(titleKey)}
                 </Link>
               </li>
             ))}

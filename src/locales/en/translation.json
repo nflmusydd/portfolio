@@ -1,0 +1,210 @@
+{
+  "navbar": {
+    "portfolio": "Portfolio",
+    "english": "English",
+    "indonesia": "Indonesia",
+    "nav": {
+      "intro": "Intro",
+      "features": "Features",
+      "projects": "Projects",
+      "resume": "Resume",
+      "contact": "Contact"
+    }
+  },
+  "intro": {
+    "words": [
+      "Full Stack Developer",
+      "Backend Developer",
+      "Front End Developer",
+      "Software Tester"
+    ],
+    "greeting1": "Hi, I'm",
+    "name": "Muhammad Naufal Musyaddad",
+    "greeting2": "a",
+    "description": "I don't just write code to make things work. I engineer secure, scalable web and mobile applications that deliver real value. With hands-on internship experience in internal systems and a strong adaptability to modern tech stacks, I build solutions that are as safe as they are seamless.",
+    "findMe": "Find me in",
+    "bestSkill": "BEST SKILL ON"
+  },
+  "features": {
+    "title": "Features",
+    "des": "What I Do",
+    "items": {
+      "web": {
+        "title": "Web Development",
+        "des": "Building robust frontend and backend functionality across diverse technology stacks, prioritizing reliable system performance, clean logic, and fully responsive layouts that adapt seamlessly from desktop to mobile."
+      },
+      "mobile": {
+        "title": "Mobile App Development",
+        "des": "Leveraging Flutter Framework to accelerate development process without compromising quality, delivering native-like performance and smooth UI consistency across various OS versions."
+      },
+      "testing": {
+        "title": "Functional & Non-functional Tests",
+        "des": "Ensuring system reliability by moving beyond standard functional checks to thoroughly evaluate critical backend metrics, including performance efficiency and security standards"
+      },
+      "clean": {
+        "title": "Clean Code",
+        "des": "Writing maintainable, readable code and implementing clean architecture principles when needed, ensuring long-term scalability and effortless handoffs for future developers."
+      },
+      "doc": {
+        "title": "Technical Documentation",
+        "des": "Crafting clear, structured documentation for both solo and team projects, serving as a reliable reference for future maintenance and long-term project continuity."
+      },
+      "research": {
+        "title": "Tool Research & Customization",
+        "des": "Exploring, evaluating, and custom-modifying open-source tools to streamline development pipelines, boost engineering efficiency, and optimize the overall build process."
+      }
+
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "visit": "Visit",
+    "desc":{
+      "bookingPlatform": "Distributed microservices booking system consisting of Core, Booking, and Payment services. Built with Go, RabbitMQ, postgreSQL, Redis, and Docker. Each services structure follows Clean Architecture pattern for maintainability.",
+      "pawtastic": "Online E-commerce app for pet supplies with interesting UI Design. Built with Flutter framework and Supabase (postgres) as backend for authentication and database. Integrated third-party services including RajaOngkir for logistics and Gemini API for AI-powered features.",
+      "internalPlatform": "An internal company website with a comprehensive sysadmin menu for user and role-permission system. Menus or modules can also be manually configured by the administrator.",
+      "laravelPulse": "Extended Laravel Pulse library into a scalable, centralized dashboard capable of tracking performance across multiple Laravel applications, which was originally designed for single-app monitoring.",
+      "shrinkBg": "Web-based, client-side image processing tool built with TypeScript allows to remove image backgrounds automatically and refine masks using a built-in canvas editor with undo/redo support. Background colors can be customized and compressed in offline mode.",
+      "boomBalloon": "Spawn 3D balloon objects using smartphone camera, and shoot the balloon to get the highest score. Challenge yourself in the timed mode against the clock, or enjoy a relaxed experience in the untimed free-play mode."
+    }
+    
+  },
+  "resume": {
+    "title": "BACKGROUND & EXPERIENCE",
+    "des": "My Resume",
+    "tabs": {
+      "experience": "Experience",
+      "skills": "Professional Skills",
+      "education": "Education",
+      "certifications": "Certifications"
+    },
+    "experience": {
+      "workingTitle": "Working Experience",
+      "orgTitle": "Organization Experience",
+      "workingPeriod": "2025 – 2026",
+      "orgPeriod": "2024 – Present",
+      "polytron": {
+        "title": "PT Hartono Istana Teknologi (Polytron)",
+        "subTitle": "Web Developer (Feb 2025 – Feb 2026)",
+        "result": "Internship",
+        "des": [
+          "Developed and maintained internal company web applications to support daily operations.",
+          "Researched tools and technologies to meet business requirements effectively.",
+          "Created technical documentation for systems and applications or business flow."
+        ]
+      },
+      "muamalah": {
+        "title": "Muamalah Circle",
+        "subTitle": "Community Manager (Aug 2026 – Present)",
+        "result": "Active",
+        "des": [
+          "Operated live-streaming broadcasts on YouTube and managed technical equipment setups.",
+          "Created, structured, and managed community databases efficiently."
+        ]
+      },
+      "mtk": {
+        "title": "Majelis Taklim Al-Khawarizmi BINUS Malang",
+        "subTitle": "Syiar Division Coordinator (Jan 2024 – Dec 2024)",
+        "result": "Completed",
+        "des": [
+          "Increased student engagement through campus religious activities and initiatives.",
+          "Managed routine religious programs and ensured smooth operational execution."
+        ]
+      }
+    },
+    "education": {
+      "period": "2022 – 2026",
+      "title": "Academic Background",
+      "card": {
+        "title": "Bachelor of Science in Computer Science study program",
+        "subTitle": "Bina Nusantara University (2022–2026)",
+        "result": "GPA: 3.77 / 4.00",
+        "des": "Successfully graduated with a Bachelor's degree (High Merit) in 3.5 years. Focused on software engineering, database management, and system architecture. Actively participated in campus organizations and practical technology implementations."
+      }
+    },
+    "certifications": {
+      "period": "Verified Skills",
+      "title": "Certifications",
+      "bootcamp": {
+        "title": "IT Bootcamp Backend Developer",
+        "subTitle": "BINUS University",
+        "des": "Achieved 'Outstanding Performance' while gaining hands-on experience in building scalable backend applications, RESTful APIs, and understanding microservices architecture using Go.",
+        "result": "Completed"
+      },
+      "sql": {
+        "title": "SQL Basic",
+        "subTitle": "HackerRank",
+        "des": "Successfully passed the SQL basic assessment covering data querying, joining tables, and database fundamentals.",
+        "result": "Passed"
+      }
+    },
+    "skills": {
+      "prog": {
+        "period": "Tech Stack",
+        "title": "Programming"
+      },
+      "db": {
+        "period": "Tech Stack",
+        "title": "Database & Tools"
+      },
+      "software": {
+        "period": "Applications",
+        "title": "Software"
+      },
+      "soft": {
+        "period": "Interpersonal",
+        "title": "Soft Skills",
+        "items": {
+          "collab": {
+            "title": "Collaboration",
+            "desc": "Accustomed to working effectively within team environments to achieve shared goals."
+          },
+          "time": {
+            "title": "Time Management",
+            "desc": "Highly capable of prioritizing tasks efficiently to meet strict deadlines."
+          },
+          "adapt": {
+            "title": "Adaptability",
+            "desc": "Continuously adapting to the latest technologies to streamline workflows."
+          },
+          "critical": {
+            "title": "Critical Thinking",
+            "desc": "Evaluating situations deeply and analytically before executing decisions."
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "des": "Get In Touch",
+    "subtitle": "I am open to job opportunities or freelance collaborations. Feel free to contact!",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "WhatsApp / Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "required": "Required fields",
+      "altContact": "Please provide at least one method of your contact (Email or Phone)",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "errors": {
+        "nameRequired": "Name is required.",
+        "contactRequired": "Please provide either a Phone Number or an Email.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subjectRequired": "Subject is required.",
+        "messageRequired": "Message is required."
+      },
+      "toast": {
+        "success": "Thank you {name}, your message has been sent!",
+        "error": "Failed to send message. Please try again later."
+      }
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Muhammad Naufal Musyaddad. All rights reserved.",
+    "templateBy": "Template inspired by"
+  }
+}

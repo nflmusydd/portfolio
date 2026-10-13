@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Title from '../layouts/Title';
 import emailjs from '@emailjs/browser';
 import { BsCheckCircle, BsXCircle } from "react-icons/bs";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -29,22 +31,22 @@ const Contact = () => {
     let newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
+      newErrors.name = t('contact.form.errors.nameRequired');
     }
     if (!formData.phone.trim() && !formData.email.trim()) {
-      newErrors.contact = "Please provide either a Phone Number or an Email.";
+      newErrors.contact = t('contact.form.errors.contactRequired');
     }
     if (formData.email.trim()) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Please enter a valid email address.";
+        newErrors.email = t('contact.form.errors.emailInvalid');
       }
     }
     if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required.";
+      newErrors.subject = t('contact.form.errors.subjectRequired');
     }
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
+      newErrors.message = t('contact.form.errors.messageRequired');
     }
 
     setErrors(newErrors);
@@ -77,7 +79,7 @@ const Contact = () => {
           setIsSubmitting(false);
           setToast({ 
             show: true, 
-            message: `Thank you ${formData.name}, your message has been sent!`, 
+            message: t('contact.form.toast.success', { name: formData.name }), 
             type: "success" 
           });
           
@@ -96,7 +98,7 @@ const Contact = () => {
           setIsSubmitting(false);
           setToast({ 
             show: true, 
-            message: "Failed to send message. Please try again later.", 
+            message: t('contact.form.toast.error'), 
             type: "error" 
           });
           
@@ -108,9 +110,9 @@ const Contact = () => {
   return (
     <section id="contact" className="w-full py-20 px-10 relative">
       <div className="flex flex-col justify-center items-center text-center">
-        <Title title="CONTACT" des="Get In Touch" />
+        <Title title={t('contact.title')} des={t('contact.des')} />
         <p className="max-w-2xl text-gray-400 text-sm md:text-base tracking-wide">
-          I am open to job opportunities or freelance collaborations. Feel free to contact!
+          {t('contact.subtitle')}
         </p>
       </div>
 
@@ -123,7 +125,7 @@ const Contact = () => {
             <div className="w-full flex flex-col md:flex-row gap-6">
               <div className="w-full flex flex-col gap-2">
                 <label className="text-sm text-gray-400 uppercase tracking-wide">
-                  Name <span className="text-designColor">*</span>
+                  {t('contact.form.name')} <span className="text-designColor">*</span>
                 </label>
                 <input 
                   type="text" 
@@ -138,8 +140,7 @@ const Contact = () => {
 
               <div className="w-full flex flex-col gap-2">
                 <label className="text-sm text-gray-400 uppercase tracking-wide">
-                  Company 
-                  {/* <span className="text-gray-600 lowercase">(optional)</span> */}
+                  {t('contact.form.company')}
                 </label>
                 <input 
                   type="text" 
@@ -155,7 +156,7 @@ const Contact = () => {
             <div className="w-full flex flex-col md:flex-row gap-6">
               <div className="w-full flex flex-col gap-2">
                 <label className="text-sm text-gray-400 uppercase tracking-wide">
-                  Email <span className="text-designColor">**</span>
+                  {t('contact.form.email')} <span className="text-designColor">**</span>
                 </label>
                 <input
                   type="email" 
@@ -169,7 +170,7 @@ const Contact = () => {
 
               <div className="w-full flex flex-col gap-2">
                 <label className="text-sm text-gray-400 uppercase tracking-wide">
-                  WhatsApp / Phone <span className="text-designColor">**</span>
+                  {t('contact.form.phone')} <span className="text-designColor">**</span>
                 </label>
                 <input 
                   type="text" 
@@ -185,11 +186,11 @@ const Contact = () => {
 
             {/* Subject */}
             <div className="w-full flex flex-col gap-2">
-              <label className="text-sm text-gray-400 uppercase tracking-wide">
-                Subject <span className="text-designColor">*</span>
-              </label>
+                <label className="text-sm text-gray-400 uppercase tracking-wide">
+                  {t('contact.form.subject')} <span className="text-designColor">*</span>
+                </label>
               <input 
-                type="text" 
+                type="text"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
@@ -200,9 +201,9 @@ const Contact = () => {
 
             {/* Message (Textarea) */}
             <div className="w-full flex flex-col gap-2">
-              <label className="text-sm text-gray-400 uppercase tracking-wide">
-                Message <span className="text-designColor">*</span>
-              </label>
+                <label className="text-sm text-gray-400 uppercase tracking-wide">
+                  {t('contact.form.message')} <span className="text-designColor">*</span>
+                </label>
               <textarea 
                 name="message"
                 value={formData.message}
@@ -217,8 +218,8 @@ const Contact = () => {
             {/* Keterangan Tambahan */}
             <div className="w-full mt-1">
               <p className="text-xs text-gray-500 tracking-wide">
-                <span className="text-designColor">*</span> Required fields <br />
-                <span className="text-designColor">**</span> Please provide at least one method of your contact (Email or Phone)
+                <span className="text-designColor">*</span> {t('contact.form.required')} <br />
+                <span className="text-designColor">**</span> {t('contact.form.altContact')}
               </p>
             </div>
 
@@ -233,7 +234,7 @@ const Contact = () => {
                     : "bg-bodyColor text-white hover:text-white hover:border-designColor"
                   }`}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
               </button>
             </div>
 

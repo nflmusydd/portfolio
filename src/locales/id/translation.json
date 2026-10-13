@@ -1,0 +1,208 @@
+{
+  "navbar": {
+    "portfolio": "Portofolio",
+    "english": "English",
+    "indonesia": "Indonesia",
+    "nav": {
+      "intro": "Intro",
+      "features": "Keahlian",
+      "projects": "Proyek",
+      "resume": "Resume",
+      "contact": "Kontak"
+    }
+  },
+  "intro": {
+    "words": [
+      "Full Stack Developer",
+      "Backend Developer",
+      "Front End Developer",
+      "Software Tester"
+    ],
+    "greeting1": "Halo, saya",
+    "name": "Muhammad Naufal Musyaddad",
+    "greeting2": "seorang",
+    "description": "Saya tidak sekadar menulis kode agar program berjalan. Saya merancang aplikasi web dan mobile yang aman serta dapat dikembangkan (scalable). Memiliki bekal pengalaman magang dalam pengembangan sistem internal dan kemampuan adaptasi yang kuat terhadap teknologi modern, untuk menciptakan aplikasi yang tidak hanya berjalan dengan mulus dan nyaman dipakai, tetapi juga aman.",
+    "findMe": "Temukan saya",
+    "bestSkill": "KEMAMPUAN TERBAIK"
+  },
+  "features": {
+    "title": "Keahlian",
+    "des": "Saya Melakukan",
+    "items": {
+      "web": {
+        "title": "Pengembangan Web",
+        "des": "Membangun fungsionalitas frontend dan backend yang kokoh di berbagai teknologi pemrograman, dengan fokus pada performa sistem yang dapat diandalkan, logika yang bersih, dan tampilan yang responsif dari desktop hingga mobile."
+      },
+      "mobile": {
+        "title": "Pengembangan Aplikasi Mobile",
+        "des": "Memanfaatkan Framework Flutter untuk mempercepat waktu pengembangan tanpa mengorbankan kualitas, menghasilkan performa mirip native dan konsistensi UI di berbagai versi sistem operasi."
+      },
+      "testing": {
+        "title": "Functional & Non-functional Tests",
+        "des": "Memastikan keandalan sistem dengan evaluasi menyeluruh tidak hanya secara fungsionalitas, tetapi juga metrik penting seperti performa dan standard keamanan."
+      },
+      "clean": {
+        "title": "Clean Code",
+        "des": "Menulis kode yang mudah dibaca dan di-maintain serta menerapkan prinsip clean architecture bila diperlukan, untuk skalabilitas jangka panjang dan transfer kode yang mudah."
+      },
+      "doc": {
+        "title": "Dokumentasi Teknis",
+        "des": "Menyusun dokumentasi teknis yang jelas dan terstruktur untuk proyek individu maupun tim, sebagai referensi utama untuk pemeliharaan jangka panjang."
+      },
+      "research": {
+        "title": "Riset Tools & Kustomisasi",
+        "des": "Mengeksplorasi, mengevaluasi, dan memodifikasi tools open-source untuk menyederhanakan alur kerja, meningkatkan efisiensi, serta mengoptimalkan keseluruhan proses pengembangan perangkat lunak."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyek Saya",
+    "visit": "Lihat",
+    "desc":{
+      "bookingPlatform": "Sistem pemesanan (booking) microservices terdistribusi yang terdiri dari Core, Booking, dan Payment Services. Dibuat menggunakan Go, RabbitMQ, PostgreSQL, Redis, dan Docker. Struktur masing-masing layanan mengikuti pola Clean Architecture agar mudah dipelihara (maintainability).",
+      "pawtastic": "Aplikasi e-commerce online untuk perlengkapan hewan peliharaan dengan desain antarmuka (UI) yang menarik. Dibuat dengan Framework Flutter dan Supabase (Postgres) sebagai backend untuk autentikasi serta database. Terintegrasi dengan layanan pihak ketiga termasuk RajaOngkir untuk logistik dan API Gemini untuk fitur berbasis AI.",
+      "internalPlatform": "Situs web internal perusahaan dengan menu sysadmin yang komprehensif untuk sistem pengguna dan izin peran (role-permission). Menu atau modul juga dapat dikonfigurasi secara manual oleh administrator.",
+      "laravelPulse": "Memodifikasi library Laravel Pulse menjadi dasbor terpusat yang dapat disesuaikan skalanya untuk memantau kinerja aplikasi di beberapa aplikasi Laravel sekaligus, yang awalnya hanya dirancang untuk pemantauan satu aplikasi saja.",
+      "shrinkBg": "Alat pemrosesan gambar berbasis web di sisi klien (client-side) yang dibuat dengan TypeScript, yang dapat memproses penghapusan latar belakang gambar secara otomatis dan penyempurnaan mask menggunakan editor kanvas bawaan dengan dukungan undo/redo. Warna latar belakang dapat disesuaikan dan dikompresi sepenuhnya dalam mode offline.",
+      "boomBalloon": "Memunculkan objek balon 3D menggunakan kamera ponsel, lalu tembak balon tersebut untuk mendapatkan skor tertinggi. Terdapat mode Timed Campaign yang melawan waktu, atau mode santai dalam Unlimited Campaign untuk bermain bebas tanpa batas waktu."
+    }
+  },
+  "resume": {
+    "title": "LATAR BELAKANG & PENGALAMAN",
+    "des": "Resume",
+    "tabs": {
+      "experience": "Pengalaman",
+      "skills": "Keterampilan Profesional",
+      "education": "Pendidikan",
+      "certifications": "Sertifikasi"
+    },
+    "experience": {
+      "workingTitle": "Pengalaman Kerja",
+      "orgTitle": "Pengalaman Organisasi",
+      "workingPeriod": "2025 – 2026",
+      "orgPeriod": "2024 – Sekarang",
+      "polytron": {
+        "title": "PT Hartono Istana Teknologi (Polytron)",
+        "subTitle": "Web Developer (Feb 2025 – Feb 2026)",
+        "result": "Magang",
+        "des": [
+          "Mengembangkan dan memelihara aplikasi web internal perusahaan untuk mendukung operasional.",
+          "Melakukan riset alat dan teknologi sesuai kebutuhan bisnis.",
+          "Menyusun dokumentasi teknis yang mencakup sistem dan aplikasi atau alur bisnis."
+        ]
+      },
+      "muamalah": {
+        "title": "Muamalah Circle",
+        "subTitle": "PIC Divisi Komunitas (Agu 2026 – Sekarang)",
+        "result": "Aktif",
+        "des": [
+          "Mengoperasikan siaran live streaming di YouTube dan mengelola hal-hal teknis.",
+          "Membuat, menyusun, dan mengelola database komunitas secara efisien."
+        ]
+      },
+      "mtk": {
+        "title": "Majelis Taklim Al-Khawarizmi BINUS Malang",
+        "subTitle": "Koordinator Divisi Syiar (Jan 2024 – Des 2024)",
+        "result": "Selesai",
+        "des": [
+          "Meningkatkan keterlibatan mahasiswa melalui kegiatan keagamaan kampus.",
+          "Mengelola program keagamaan rutin dan memastikan pelaksanaannya berjalan lancar."
+        ]
+      }
+    },
+    "education": {
+      "period": "2022 – 2026",
+      "title": "Latar Belakang Akademik",
+      "card": {
+        "title": "S1 Teknik Informatika",
+        "subTitle": "Universitas Bina Nusantara (2022–2026)",
+        "result": "IPK: 3,77 / 4,00",
+        "des": "Lulus dengan gelar Sarjana Komputer (High Merit) dalam 3,5 tahun. Fokus pada rekayasa perangkat lunak, manajemen database, dan arsitektur sistem. Berpartisipasi aktif dalam organisasi kampus dan implementasi teknologi praktis."
+      }
+    },
+    "certifications": {
+      "period": "Keahlian Tersertifikasi",
+      "title": "Sertifikasi",
+      "bootcamp": {
+        "title": "IT Bootcamp Backend Developer",
+        "subTitle": "BINUS University",
+        "des": "Meraih 'Outstanding Performance' dengan pengalaman membangun aplikasi backend scalable, RESTful API, dan pemahaman arsitektur microservices menggunakan Go.",
+        "result": "Selesai"
+      },
+      "sql": {
+        "title": "SQL Basic",
+        "subTitle": "HackerRank",
+        "des": "Lulus asesmen SQL dasar meliputi query data, join table, dan dasar-dasar database.",
+        "result": "Lulus"
+      }
+    },
+    "skills": {
+      "prog": {
+        "period": "Tech Stack",
+        "title": "Pemrograman"
+      },
+      "db": {
+        "period": "Tech Stack",
+        "title": "Database & Tools"
+      },
+      "software": {
+        "period": "Aplikasi",
+        "title": "Perangkat Lunak"
+      },
+      "soft": {
+        "period": "Interpersonal",
+        "title": "Soft Skills",
+        "items": {
+          "collab": {
+            "title": "Kolaborasi",
+            "desc": "Terbiasa bekerja efektif dalam tim untuk mencapai tujuan bersama."
+          },
+          "time": {
+            "title": "Manajemen Waktu",
+            "desc": "Mampu memprioritaskan tugas secara efisien untuk memenuhi tenggat waktu."
+          },
+          "adapt": {
+            "title": "Adaptabilitas",
+            "desc": "Terus beradaptasi dengan teknologi terkini untuk mengefisienkan alur kerja."
+          },
+          "critical": {
+            "title": "Berpikir Kritis",
+            "desc": "Mengevaluasi situasi secara mendalam dan analitis sebelum mengambil keputusan."
+          }
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "KONTAK",
+    "des": "Hubungi Saya",
+    "subtitle": "Saya terbuka untuk peluang pekerjaan atau kolaborasi freelance. Jangan ragu untuk menghubungi!",
+    "form": {
+      "name": "Nama",
+      "company": "Perusahaan",
+      "email": "Email",
+      "phone": "WhatsApp / Telepon",
+      "subject": "Subjek",
+      "message": "Pesan",
+      "required": "Wajib diisi",
+      "altContact": "Mohon isi setidaknya salah satu kontak (Email atau Telepon)",
+      "send": "Kirim Pesan",
+      "sending": "Mengirim...",
+      "errors": {
+        "nameRequired": "Nama wajib diisi.",
+        "contactRequired": "Mohon isi nomor telepon atau email.",
+        "emailInvalid": "Format email tidak valid.",
+        "subjectRequired": "Subjek wajib diisi.",
+        "messageRequired": "Pesan wajib diisi."
+      },
+      "toast": {
+        "success": "Terima kasih {name}, pesan Anda telah terkirim!",
+        "error": "Gagal mengirim pesan. Silakan coba lagi nanti."
+      }
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Muhammad Naufal Musyaddad. All rights reserved.",
+    "templateBy": "Template terinspirasi oleh"
+  }
+}

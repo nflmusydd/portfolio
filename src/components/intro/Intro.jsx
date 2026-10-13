@@ -1,13 +1,16 @@
 import React from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useTranslation } from 'react-i18next'
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { SiFlutter, SiGo, SiJavascript, SiLaravel } from 'react-icons/si'
 import {bannerImg} from "../../assets/index"
 
-const WORDS = ["Full Stack Developer", "Backend Developer", "Front End Developer", "Software Tester"];
-const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a));
-
 const Banner = () => {
+  const { t } = useTranslation();
+  const words = t('intro.words', { returnObjects: true }) || ["Full Stack Developer"];
+  const WORDS = Array.isArray(words) && words.length > 0 ? words : ["Full Stack Developer"];
+  const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a), WORDS[0] || "");
+
   const [text] = useTypewriter({
     words: WORDS,
     loop: true,
@@ -25,15 +28,15 @@ const Banner = () => {
         <div className="flex flex-col gap-5">
           <h4 className=" text-lg font-normal">WELCOME TO MY PROFILE</h4>
           <h1 className="text-6xl font-bold text-white">
-            Hi, I'm <span className="text-designColor capitalize">Musyaddad</span>
+            {t('intro.greeting1')} <span className="text-designColor capitalize">Musyaddad</span>
           </h1>
           <h2 className="grid text-2xl sm:text-4xl font-bold text-white">
             <span className="invisible col-start-1 row-start-1" aria-hidden="true">
-              a {LONGEST}|
+              {t('intro.greeting2')} {LONGEST}|
             </span>
 
             <span className="col-start-1 row-start-1">
-              a <span>{text}</span>
+              {t('intro.greeting2')} <span>{text}</span>
               <Cursor
                 cursorBlinking={true}
                 cursorStyle="|"
@@ -42,18 +45,14 @@ const Banner = () => {
             </span>
           </h2>
           <p className="text-base font-bodyFont leading-6 tracking-wide">
-            I don't just write code to make things work.
-            I engineer secure, scalable web and mobile applications that deliver real value. 
-            With hands-on internship experience in internal systems and a strong adaptability to modern tech stacks, 
-            I build solutions that are as safe as they are seamless.
-            {/* Saya tidak sekadar menulis kode agar program berjalan. saya merancang aplikasi web dan mobile yang aman serta dapat dikembangkan (scalable). Memiliki bekal pengalaman magang dalam pengembangan sistem internal dan kemampuan adaptasi yang kuat terhadap teknologi modern, untuk menciptakan aplikasi yang tidak hanya berjalan dengan mulus dan nyaman dipakai, tetapi juga aman. */}
+            {t('intro.description')}
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
           <div>
             <h2 className="text-base uppercase font-titleFont mb-4">
-              Find me in
+              {t('intro.findMe')}
             </h2>
             <div className="flex gap-4">
               <a href="https://linkedin.com/in/naufalmusyaddad" target="_blank" rel="noopener noreferrer" className="bannerIcon">
@@ -66,9 +65,9 @@ const Banner = () => {
           </div>
 
           <div>
-            <h2 className="text-base uppercase font-titleFont mb-4">
-              BEST SKILL ON
-            </h2>
+          <h2 className="text-base uppercase font-titleFont mb-4">
+            {t('intro.bestSkill')}
+          </h2>
             <div className="flex gap-4">
               <a href="https://laravel.com/framework/docs/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiLaravel />
