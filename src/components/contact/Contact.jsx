@@ -108,7 +108,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-20 px-10 relative">
+    <section id="contact" className="w-full py-20 px-4 md:px-10 relative">
       <div className="flex flex-col justify-center items-center text-center">
         <Title title={t('contact.title')} des={t('contact.des')} />
         <p className="max-w-2xl text-gray-400 text-sm md:text-base tracking-wide">
@@ -117,7 +117,7 @@ const Contact = () => {
       </div>
 
       <div className="w-full flex justify-center mt-10">
-        <div className="w-full max-w-4xl h-auto bg-linear-to-b from-bodyColor via-[#0c1942] via-80% to-black p-8 lg:p-12 rounded-lg shadow-shadowOne flex flex-col gap-8">
+        <div className="w-full max-w-4xl h-auto bg-linear-to-b from-bodyColor via-[#0c1942] via-80% to-black p-4 md:p-8 lg:p-12 rounded-lg shadow-shadowOne flex flex-col gap-8">
           
           <form onSubmit={handleSend} className="w-full flex flex-col gap-6" noValidate>
 

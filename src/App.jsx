@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText">
-      <div className="max-w-screen-2xl mx-auto px-4">
+      <div className="max-w-screen-2xl mx-auto px-2 md:px-4">
         <Navbar/>
         <Intro />
         <Features/>

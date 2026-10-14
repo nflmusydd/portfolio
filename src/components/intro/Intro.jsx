@@ -9,7 +9,7 @@ const Banner = () => {
   const { t } = useTranslation();
   const words = t('intro.words', { returnObjects: true }) || ["Full Stack Developer"];
   const WORDS = Array.isArray(words) && words.length > 0 ? words : ["Full Stack Developer"];
-  const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a), WORDS[0] || "");
+  const LONGEST = WORDS.reduce((a, b) => (b.length > a.length ? b : a), WORDS[0] || "") + "loong";
 
   const [text] = useTypewriter({
     words: WORDS,
@@ -21,16 +21,16 @@ const Banner = () => {
   return (
     <section
       id="intro"
-      className="w-full pt-10 pb-20 px-10 flex flex-col gap-10 xl:gap-0 lg:flex-row items-center border-b font-titleFont border-b-blue-700"
+      className="w-full pt-10 pb-20 px-4 md:px-10 flex flex-col gap-10 xl:gap-0 lg:flex-row items-center border-b font-titleFont border-b-blue-700 overflow-hidden"
     >
       {/* LEFT */}
       <div className="w-full lg:w-1/2 flex flex-col gap-20">
         <div className="flex flex-col gap-5">
           <h4 className=" text-lg font-normal">WELCOME TO MY PROFILE</h4>
-          <h1 className="text-6xl font-bold text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight wrap-break-word">
             {t('intro.greeting1')} <span className="text-designColor capitalize">Musyaddad</span>
           </h1>
-          <h2 className="grid text-2xl sm:text-4xl font-bold text-white">
+          <h2 className="grid text-xl sm:text-3xl md:text-4xl font-bold text-white">
             <span className="invisible col-start-1 row-start-1" aria-hidden="true">
               {t('intro.greeting2')} {LONGEST}|
             </span>
@@ -54,7 +54,7 @@ const Banner = () => {
             <h2 className="text-base uppercase font-titleFont mb-4">
               {t('intro.findMe')}
             </h2>
-            <div className="flex gap-4">
+            <div className="flex gap-2 md:gap-4">
               <a href="https://linkedin.com/in/naufalmusyaddad" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <FaLinkedinIn/>  
               </a>
@@ -68,7 +68,7 @@ const Banner = () => {
           <h2 className="text-base uppercase font-titleFont mb-4">
             {t('intro.bestSkill')}
           </h2>
-            <div className="flex gap-4">
+            <div className="flex gap-2 md:gap-4 flex-wrap">
               <a href="https://laravel.com/framework/docs/" target="_blank" rel="noopener noreferrer" className="bannerIcon">
                 <SiLaravel />
               </a>

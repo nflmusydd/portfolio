@@ -12,7 +12,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="w-full h-full pt-10 pb-20 px-10 border-b border-b-blue-700"
+      className="w-full h-full pt-10 pb-20 px-4 md:px-10 border-b border-b-blue-700"
     >
       <Title title={t('features.title')} des={t('features.des')} />
       <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-10">

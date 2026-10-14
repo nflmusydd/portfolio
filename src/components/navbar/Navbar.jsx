@@ -10,6 +10,12 @@ const Navbar = () => {
   const [showMenuMobile, setShowMenu] = useState(false);
   const dropdownRef = useRef(null);
 
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('preferredLang', lang);
+    setDropdownOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       // klik diluar elemen ref 'dropdownRef'
@@ -32,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full h-16 px-6 mx-auto flex justify-between items-center bg-bodyColor sticky top-0 z-50 border-b border-b-blue-500">
+    <nav className="w-full h-16 px-2 md:px-6 mx-auto flex justify-between items-center bg-bodyColor sticky top-0 z-50 border-b border-b-blue-500">
         <div 
           className="h-full py-2 flex items-center justify-start gap-3 cursor-pointer md:cursor-default"
           onClick={() => {
@@ -103,13 +109,13 @@ const Navbar = () => {
                 }`}
             >
                 <button 
-                    onClick={() => { i18n.changeLanguage('en'); setDropdownOpen(false); }}
+                    onClick={() => handleLanguageChange('en')}
                     className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${(i18n.language === 'en') ? 'text-designColor font-semibold' : 'text-lightText'}`}
                 >
                     {t('navbar.english')}
                 </button>
                 <button 
-                    onClick={() => { i18n.changeLanguage('id'); setDropdownOpen(false); }}
+                    onClick={() => handleLanguageChange('id')}
                     className={`px-4 py-2 text-sm text-left hover:bg-gray-800 hover:text-designColor transition-colors ${(i18n.language === 'id') ? 'text-designColor font-semibold' : 'text-lightText'}`}
                 >
                     {t('navbar.indonesia')}

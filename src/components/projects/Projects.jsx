@@ -7,7 +7,7 @@ import { pawtastic1, pawtastic2, pawtastic3, pawtastic4, pawtastic5, booking_mic
 const Projects = () => {
   const { t } = useTranslation();
   return (
-    <section id="projects" className="w-full h-full py-20 px-10 border-b border-b-blue-700">
+    <section id="projects" className="w-full h-full py-20 px-4 md:px-10 border-b border-b-blue-700">
       <div className="flex justify-center items-center text-center">
         <Title title={t('projects.visit', 'Visit')} des={t('projects.title', 'Visit')} />
       </div>
